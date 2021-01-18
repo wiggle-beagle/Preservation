@@ -1,6 +1,4 @@
 import java.io.*;
-import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -26,7 +24,7 @@ public class Main {
 
             oos.writeObject(gamer);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Something went wrong" + e.getMessage());
         }
     }
 
@@ -39,7 +37,8 @@ public class Main {
             fis.read(bytes);
             zipOutputStream.write(bytes);
             zipOutputStream.closeEntry();
-        } catch (Exception ex) {
+        } catch (Exception e) {
+            System.out.println("Something went wrong " + e.getMessage());
         }
     }
 
